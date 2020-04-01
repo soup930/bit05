@@ -1,4 +1,4 @@
-package org.common;
+package vs.common;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;

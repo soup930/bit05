@@ -1,4 +1,4 @@
-package org.ma.ma_001_1.controller;
+package vs.lt.lt003_1;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

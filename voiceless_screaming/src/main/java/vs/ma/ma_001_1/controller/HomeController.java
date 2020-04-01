@@ -1,4 +1,4 @@
-package org.ma.ma_001_1.controller;
+package vs.ma.ma_001_1.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
