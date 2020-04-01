@@ -36,7 +36,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "LC/LC_001_1";
+		return "home";
 	}
 	
 }
