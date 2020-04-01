@@ -25,6 +25,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'colors' },
 		{ name: 'about' }
 	];
+
 	config.width = '90%';
 	config.height = 500;
 	
