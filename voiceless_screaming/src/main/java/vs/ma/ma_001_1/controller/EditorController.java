@@ -14,4 +14,12 @@ public class EditorController {
 	public void edit() {
 		log.info("edit--------------------");
 	}
+	@RequestMapping("/index_editor")
+	public void edit_index1() {
+		log.info("index1--------------------");
+	}
+	@RequestMapping("/index_finder")
+	public void edit_index2() {
+		log.info("index2--------------------");
+	}
 }

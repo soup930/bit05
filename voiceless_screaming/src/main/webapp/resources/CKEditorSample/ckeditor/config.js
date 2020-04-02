@@ -42,5 +42,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserFlashBrowseUrl = "/CKEditorSample/ckfinder/ckfinder.html?type=Flash";
     config.filebrowserUploadUrl = "/CKEditorSample/ckfinder/core/connector/java/connctor.java?command=QuickUpload&type=Files";
     config.filebrowserImageUploadUrl = "/CKEditorSample/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images";
-    config.filebrowserFlashUploadUrl = "/CKEditorSample/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash";	
+    config.filebrowserFlashUploadUrl = "/CKEditorSample/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash";
+    
+    config.extraPlugins = 'youtube' ; //plugins 폴더안에 youtube 플러그인 폴더를 추가해줘야한다.
 };

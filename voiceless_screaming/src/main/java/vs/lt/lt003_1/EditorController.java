@@ -13,5 +13,4 @@ public class EditorController {
 	@RequestMapping("/edit_page")
 	public void edit() {
 		log.info("edit--------------------");
-	}
-}
+	}}
