@@ -1,4 +1,4 @@
-package org.common;
+package vs.common;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -20,7 +20,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * mybatis mapper ??™ ê°ì? ?›„ ??™?œ¼ë¡? ?„œë²? ?¬?‹œ?‘?´ ?•„?š” ?—†?´ ë°˜ì˜
+ * mybatis mapper ìë™ ê°ì§€ í›„ ìë™ìœ¼ë¡œ ì„œë²„ ì¬ì‹œì‘ì´ í•„ìš” ì—†ì´ ë°˜ì˜
  *
  * @author sbcoba
  */ 
@@ -32,7 +32,7 @@ public class RefreshableSqlSessionFactoryBean extends SqlSessionFactoryBean impl
 	private TimerTask task;
 	private Resource[] mapperLocations;
 	/**
-	 * ?ŒŒ?¼ ê°ì‹œ ?“°? ˆ?“œê°? ?‹¤?–‰ì¤‘ì¸ì§? ?—¬ë¶?.
+	 * íŒŒì¼ ê°ì‹œ ì“°ë ˆë“œê°€ ì‹¤í–‰ì¤‘ì¸ì§€ ì—¬ë¶€.
 	 */
 	private boolean running = false;
 	private final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
@@ -64,7 +64,7 @@ public class RefreshableSqlSessionFactoryBean extends SqlSessionFactoryBean impl
 	}
 
 	/**
-	 * ?‹±ê¸??†¤ ë©¤ë²„ë¡? SqlMapClient ?›ë³? ???‹  ?”„ë¡ì‹œë¡? ?„¤? •?•˜?„ë¡? ?˜¤ë²„ë¼?´?“œ.
+	 * ì‹±ê¸€í†¤ ë©¤ë²„ë¡œ SqlMapClient ì›ë³¸ ëŒ€ì‹  í”„ë¡ì‹œë¡œ ì„¤ì •í•˜ë„ë¡ ì˜¤ë²„ë¼ì´ë“œ.
 	 */
 	public void afterPropertiesSet() throws Exception {
 		super.afterPropertiesSet();

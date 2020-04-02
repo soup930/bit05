@@ -26,12 +26,6 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about' }
 	];
 
-<<<<<<< HEAD
-	config.width = '90%';
-	config.height = 500;
-	
-=======
->>>>>>> parent of ef05b17... 0401_이혁희
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';
