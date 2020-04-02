@@ -28,7 +28,11 @@
 	</bean>
 
 	<bean id="sqlSessionFactory"
+<<<<<<< HEAD
 		class="vs.common.RefreshableSqlSessionFactoryBean">
+=======
+		class="org.common.RefreshableSqlSessionFactoryBean"> 
+>>>>>>> parent of ef05b17... 0401_이혁희
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation"
 			value="classpath:mybatis/model/modelConfig.xml" />

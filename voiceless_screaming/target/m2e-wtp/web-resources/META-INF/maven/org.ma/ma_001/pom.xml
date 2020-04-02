@@ -208,6 +208,7 @@
 		</dependency>
 
 		<!-- Local -->
+<<<<<<< HEAD
 		<!-- <dependency> <groupId>ojdbc</groupId> <artifactId>ojdbc6</artifactId> 
 			<version>1.1</version> </dependency> -->
 		<dependency>
@@ -289,6 +290,10 @@
 			<artifactId>tiles-servlet</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+=======
+
+
+>>>>>>> parent of ef05b17... 0401_이혁희
 
 		<!-- 파일 업로드 -->
 		<dependency>
