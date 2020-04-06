@@ -125,14 +125,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/java,windows,eclipse,java-web
-<<<<<<< HEAD
-
 *.xml
 *.MF
-=======
-*.xml
-MANIFEST.MF
->>>>>>> 2138864fc08af84aabc7d2e8f0c0172980d2c046
 *.properties
 *.classpath
