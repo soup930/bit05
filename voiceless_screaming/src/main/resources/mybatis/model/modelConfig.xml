@@ -4,5 +4,6 @@
 
 <configuration>
 	<typeAliases>
+	<typeAlias type="vs.ac.ac_001_1.domain.AcVO" alias="AcVO"/>
 		</typeAliases> 
 </configuration>

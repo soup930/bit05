@@ -1,24 +1,16 @@
 package vs.ac.ac_001_1.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.Map;
 
-import lombok.extern.log4j.Log4j;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@Controller
-@Log4j
-@RequestMapping("/ac/*")
-public class Ac_controller {
-	
-	@RequestMapping(value="/ac_001_1")
-	public void regist(){
-		log.info("................");
-	}
-	
-	
-	
+import org.springframework.web.servlet.ModelAndView;
+
+public interface Ac_controller {
+ 
+	public ModelAndView Ac_List(HttpServletRequest request, HttpServletResponse response) throws Exception;
+
 	
 	
 	

@@ -12,13 +12,14 @@
 	<div class="content" style="width: 75%;  margin-top: 30px;">
 		<div class="row justify-content-md-center">
 			<div class="col-sm-9">
-				<div class="input-group mb-3">
+				<div class="input-group mb-4">
 					<div class="input-group-prepend">
 						<label class="input-group-text">제목</label>
 					</div>
 					<input type="text" class="form-control">
 				</div>
 			</div>
+			
 			<div class="col-sm-3">
 				<div class="input-group mb-3">
 					<select class="custom-select" id="inputGroupSelect03">
@@ -40,27 +41,6 @@
 					<script type="text/javascript">
 						CKEDITOR.replace('p_content');
 					</script>
-				</div>
-			</div>
-		</div>
-
-		<div class="row justify-content-md-center">
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text">GitHub</span>
-				</div>
-				<input type="text" class="form-control">
-			</div>
-		</div>
-
-		<div class="row justify-content-md-center">
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="inputGroupFileAddon01">썸네일</span>
-				</div>
-				<div class="custom-file">
-					&nbsp;<input type="file" class="form-control-file"
-						id="exampleFormControlFile1">
 				</div>
 			</div>
 		</div>
