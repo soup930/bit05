@@ -21,6 +21,7 @@
 					<input type="text" class="form-control" name="co_b_title">
 				</div>
 			</div>
+			<!--
 			<div class="col-sm-3">
 				<div class="input-group mb-3" width: 800px;>
 					<select class="custom-select" id="inputGroupSelect03">
@@ -30,6 +31,7 @@
 					</select>
 				</div>
 			</div>
+			-->
 		</div>
 		<div class="row justify-content-md-center">
 		<div class="col-sm-6">
@@ -37,7 +39,7 @@
 				<div class="input-group-prepend">
 					<label class="input-group-text">일자</label>
 				</div>
-				<input type="text" class="form-control" id="co_b_day">
+				<input type="text" class="form-control" name="co_b_day">
 			</div>
 		</div>
 		<div class="col-sm-6">
@@ -45,7 +47,7 @@
 				<div class="input-group-prepend">
 					<label class="input-group-text">종목</label>
 				</div>
-				<input type="text" class="form-control" id="co_b_type">
+				<input type="text" class="form-control" name="co_b_type">
 			</div>
 		</div>
 		</div>
@@ -54,7 +56,7 @@
 		<div class="row justify-content-md-center">
 			<div class="col_c" style="margin-bottom: 100px">
 				<div class="input-group">
-					<textarea class="form-control" id="p_content"></textarea>
+					<textarea class="form-control" id="p_content" name="co_b_text"></textarea>
 					
 					<script type="text/javascript">
 							CKEDITOR.replace('p_content')                                                                              
@@ -62,7 +64,7 @@
 				</div>
 			</div>
 		</div>
-
+<!--  
 		<div class="row justify-content-md-center">
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
@@ -74,7 +76,7 @@
 				</div>
 			</div>
 		</div>
-
+-->
 		<div class="row justify-content-md-center">
 			<button type="submit" class="btn btn-outline-secondary"
 				style="width: 20%; font-weight: bold">등 록</button>
