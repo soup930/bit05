@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-	<style>
+<style>
 .dot {overflow:hidden;float:left;width:12px;height:12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png');}    
 .dotOverlay {position:relative;bottom:10px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;font-size:12px;padding:5px;background:#fff;}
 .dotOverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}    
@@ -18,6 +18,7 @@
 <!-- 	-------------------------------------------------------------------------------------->	
 <!-- 지도 부분 -->
  	<div id="wrapper1" class="container">
+<<<<<<< HEAD
 	
 		<div id="map" style="width:500px;height:400px;"></div>
 		
@@ -27,6 +28,51 @@
 		<br>
 		자전거 시간 : <span id="bycicleTime"></span>
 		
+=======
+ 	
+	<h5 class="pb-4 mb-4 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 코스 등록
+      </font></font></h5>
+	<br>
+	
+	<div class="col-md-8">
+		<div id="map" style="width:500px;height:400px;"></div>
+	</div>
+	
+	<div class="col-md-4">
+		<h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 거리 : <span id="distance"></span>
+     	 </font></font></h5>
+   		<br>
+      
+      <h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 도보 시간 : <span id="walkTime"></span>
+      </font></font></h5>
+      <br>
+      
+      <h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	자전거 시간 : <span id="bycicleTime"></span>
+      </font></font></h5>
+      <br>
+      
+      <h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 출발지 : <span id="start"></span>
+      </font></font></h5>
+      <br>
+    </div>
+		
+			
+	<span>상세 정보</span>
+		<br>
+		
+	제목 : <input type="text"/> <br>
+		지역 : <input type="SelectBox"/> <input type="SelectBox"/><br>
+		썸네일 : <br>
+		내용 : <br>
+		
+	
+	
+>>>>>>> c81d10205408d59ea8bd5d0212b482d29d5e96ee
 	</div>
 	
 	
