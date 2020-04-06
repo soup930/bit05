@@ -7,7 +7,7 @@ public class Page_DTO {
 	
 	private int page; //
 	private int amount; //
-	private String Board;
+	private String board;
 
 	public int getPage() {
 		return page;
@@ -26,17 +26,16 @@ public class Page_DTO {
 	}
 
 	public String getBoard() {
-		return Board;
+		return board;
 	}
 
 	public void setBoard(String board) {
-		Board = board;
+		this.board = board;
 	}
 
-	public Page_DTO(String Board) {
+	public Page_DTO() {
 		page = 1;
 		amount = 10;
-		this.Board = Board;
 		
 	}
 }

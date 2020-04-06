@@ -31,6 +31,7 @@
 				</c:forEach>
 			</table>
 		</div>
+		<ul class="pagination justify-content-end">
 								<c:if test="${pageUtil.prev }">
 							<li class="page-item"><a class="page-link" href="/board/list?page=${pageUtil.start-1}">Previous</a></li>
 						</c:if>
@@ -42,5 +43,6 @@
 							<li class="page-item"><a class="page-link" href="/board/list?page=${pageUtil.end+1 }">Next</a>
 							</li>
 							</c:if>
+							</ul>
 	</div>
 	<%@ include file="../includes/footer.jsp"%>
