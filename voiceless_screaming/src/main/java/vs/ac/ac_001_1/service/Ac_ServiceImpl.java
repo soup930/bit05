@@ -27,28 +27,21 @@ public class Ac_ServiceImpl implements Ac_Service {
 		List<AcVO> list;
 		try {
  
-			System.out.println(sqlSession.selectList("ac.ac_list", acvo));
-
-			System.out.println("食奄澗 ServiceImpl");
-
 			list = sqlSession.selectList("ac.ac_list", acvo);
 
-			System.out.println(list + "杭汽?");
-
-			System.out.println(list.get(0) + "dao : list");
 			return list;
 
 		} catch (Exception e) {
-			System.out.println("ししししししし" + e);
+			System.out.println("ac_List 拭君 " + e);
 			return null;
 		}
 
 	}
-	/*
-	 * @Override public String ac_test() { System.out.println("ししししししししし"); return
-	 * sqlSession.selectOne("ac.ac_test");
-	 * 
-	 * }
-	 */
-
+	@Override
+	public void ac_insert(AcVO acvo) {
+		
+		sqlSession.insert("ac.ac_insert" , acvo);
+		
+	}
+	
 }

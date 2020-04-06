@@ -33,8 +33,8 @@
 								<td>${data.co_b_index}</td>
 								<td>${data.co_b_title}</td>
 								<td>${data.co_b_text}</td>
-								<td>${data.co_b_see}</td>
-								<td>${data.co_b_good}</td>
+								<td>${data.co_b_day}</td>
+								<td></td>
 							</tr>
 						</c:forEach>
 					</table>

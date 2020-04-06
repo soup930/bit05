@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import lombok.extern.log4j.Log4j;
 import vs.li.li_001_01.vo.LI_VO;
 import vs.li.li_001_1.service.LI_Service;
-import lombok.AllArgsConstructor;
 
 @Controller
 @Log4j
@@ -22,9 +21,9 @@ public class LI_controller {
 	@RequestMapping(value = "/li_001_1", method = RequestMethod.GET)
 	public void li_review(Model model,LI_VO vo) {
 
-		log.info("----------------------�썑湲� 寃뚯떆�뙋view-------------------");
+		log.info("----------------------占쎌뜎疫뀐옙 野껊슣�뻻占쎈솇view-------------------");
 
-		vo.setLi_b_type("장비게시판");
+		vo.setLi_b_type("�옣鍮꾧쾶�떆�뙋");
 		
 		model.addAttribute("list", service.get_list(vo));
 
@@ -33,48 +32,44 @@ public class LI_controller {
 	@RequestMapping(value = "/li_002_1", method = RequestMethod.GET)
 	public void li_recommendation() {
 
-		log.info("-----------------------異붿쿇 寃뚯떆�뙋view-------------------");
+		log.info("-----------------------�빊遺우퓝 野껊슣�뻻占쎈솇view-------------------");
 		
 	}
 	@RequestMapping(value = "/li_003_1", method = RequestMethod.GET)
 	public void li_management() {
 
-		log.info("-----------------------愿�由� 寃뚯떆�뙋view-------------------");
+		log.info("-----------------------�꽴占썹뵳占� 野껊슣�뻻占쎈솇view-------------------");
 		
 	}
 	@RequestMapping(value = "/li_004_1", method = RequestMethod.GET)
 	public void li_boast() {
 
-		log.info("-----------------------�옄�옉 寃뚯떆�뙋view-------------------");
+		log.info("-----------------------占쎌쁽占쎌삂 野껊슣�뻻占쎈솇view-------------------");
 		
 	}
 	
 	@RequestMapping(value = "/li_005_1", method = RequestMethod.GET)
 	public void li_edit() {
 
-		log.info("-----------------------湲� �옉�꽦view-------------------");
+		log.info("-----------------------疫뀐옙 占쎌삂占쎄쉐view-------------------");
 		
 	}
 
 	@RequestMapping(value = "/li_005_1", method = RequestMethod.POST)
 	public String regist(LI_VO vo,Model model) {
-		log.info("���옣");
+		log.info("占쏙옙占쎌삢");
 		
-		log.info("�뀓�뒪�듃------"+vo.getLi_text());
-		log.info("���엯"+vo.getLi_type());
-		log.info("移댄뀒怨좊━-----"+vo.getLi_category());
-		log.info("寃뚯떆�뙋�쑀�삎@@@@@"+vo.getLi_b_type());
+		log.info("占쎈�볩옙�뮞占쎈뱜------"+vo.getLi_text());
+		log.info("占쏙옙占쎌뿯"+vo.getLi_type());
+		log.info("燁삳똾�믤�⑥쥓�봺-----"+vo.getLi_category());
+		log.info("野껊슣�뻻占쎈솇占쎌�占쎌굨@@@@@"+vo.getLi_b_type());
 		
 		service.li_regist(vo);
 
-		log.info("---------�옉�꽦 �셿猷�----------------");
-		model.addAttribute("message", "湲��옉�꽦�씠 �셿猷뚮릺�뿀�뒿�땲�떎.");
+		log.info("---------占쎌삂占쎄쉐 占쎌끏�뙴占�----------------");
+		model.addAttribute("message", "疫뀐옙占쎌삂占쎄쉐占쎌뵠 占쎌끏�뙴�슢由븝옙肉�占쎈뮸占쎈빍占쎈뼄.");
 		return "redirect:/li/li001_1";
-		log.info("---------작성 완료----------------");
-		//작성 완료 메세지
-		model.addAttribute("message", "ok");
-		return "redirect:/li/li_001_1";
->>>>>>> fef166f299d911d99d58d4832cf034d9ca75d765
+
 	}
 	
 }

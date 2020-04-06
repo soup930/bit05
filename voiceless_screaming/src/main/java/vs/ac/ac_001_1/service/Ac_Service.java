@@ -8,7 +8,5 @@ public interface Ac_Service {
 	
 	public List<AcVO> ac_List(AcVO acvo);
 	
-
-	//public List<AcVO> ac_list();
-
+	public void ac_insert(AcVO acvo);
 }
