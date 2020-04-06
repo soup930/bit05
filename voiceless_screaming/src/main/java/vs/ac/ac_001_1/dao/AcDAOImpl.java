@@ -1,9 +1,6 @@
 package vs.ac.ac_001_1.dao;
 
 import java.util.List;
-import java.util.Map;
-
-import javax.xml.stream.events.Namespace;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +16,24 @@ public class AcDAOImpl implements AcDAO{
 
 	
 	@Override
-	public List<AcVO> Ac_List() {
+	public List<AcVO> Ac_List(AcVO acvo) {
 		
+		
+		try {
+			
 		System.out.println("食奄澗 DAOImpl");
 		
-		List<AcVO> list = sqlSession.selectList("ac.ac_list");
+		List<AcVO> list = sqlSession.selectList("ac.ac_list", acvo);
 		
-		System.out.println(list + "dao : list");
+		System.out.println(acvo.getCo_b_title());
 		
-		return list;
+		System.out.println(list.get(0) + "dao : list");
+			return list;
+		}catch (Exception e) {
+			System.out.println("ししししししし" + e);
+			return null;
+		}
+		
 		
 	}
 	

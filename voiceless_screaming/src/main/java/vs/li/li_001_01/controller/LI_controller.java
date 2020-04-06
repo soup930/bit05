@@ -22,9 +22,9 @@ public class LI_controller {
 	@RequestMapping(value = "/li_001_1", method = RequestMethod.GET)
 	public void li_review(Model model,LI_VO vo) {
 
-		log.info("----------------------후기 게시판view-------------------");
+		log.info("----------------------�썑湲� 寃뚯떆�뙋view-------------------");
 
-		vo.setLi_b_type("장비게시판");
+		vo.setLi_b_type("�옣鍮꾧쾶�떆�뙋");
 		
 		model.addAttribute("list", service.get_list(vo));
 
@@ -33,42 +33,42 @@ public class LI_controller {
 	@RequestMapping(value = "/li_002_1", method = RequestMethod.GET)
 	public void li_recommendation() {
 
-		log.info("-----------------------추천 게시판view-------------------");
+		log.info("-----------------------異붿쿇 寃뚯떆�뙋view-------------------");
 		
 	}
 	@RequestMapping(value = "/li_003_1", method = RequestMethod.GET)
 	public void li_management() {
 
-		log.info("-----------------------관리 게시판view-------------------");
+		log.info("-----------------------愿�由� 寃뚯떆�뙋view-------------------");
 		
 	}
 	@RequestMapping(value = "/li_004_1", method = RequestMethod.GET)
 	public void li_boast() {
 
-		log.info("-----------------------자랑 게시판view-------------------");
+		log.info("-----------------------�옄�옉 寃뚯떆�뙋view-------------------");
 		
 	}
 	
 	@RequestMapping(value = "/li_005_1", method = RequestMethod.GET)
 	public void li_edit() {
 
-		log.info("-----------------------글 작성view-------------------");
+		log.info("-----------------------湲� �옉�꽦view-------------------");
 		
 	}
 
 	@RequestMapping(value = "/li_005_1", method = RequestMethod.POST)
 	public String regist(LI_VO vo,Model model) {
-		log.info("저장");
+		log.info("���옣");
 		
-		log.info("텍스트------"+vo.getLi_text());
-		log.info("타입"+vo.getLi_type());
-		log.info("카테고리-----"+vo.getLi_category());
-		log.info("게시판유형@@@@@"+vo.getLi_b_type());
+		log.info("�뀓�뒪�듃------"+vo.getLi_text());
+		log.info("���엯"+vo.getLi_type());
+		log.info("移댄뀒怨좊━-----"+vo.getLi_category());
+		log.info("寃뚯떆�뙋�쑀�삎@@@@@"+vo.getLi_b_type());
 		
 		service.li_regist(vo);
 
-		log.info("---------작성 완료----------------");
-		model.addAttribute("message", "글작성이 완료되었습니다.");
+		log.info("---------�옉�꽦 �셿猷�----------------");
+		model.addAttribute("message", "湲��옉�꽦�씠 �셿猷뚮릺�뿀�뒿�땲�떎.");
 		return "redirect:/li/li001_1";
 	}
 	

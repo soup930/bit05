@@ -22,7 +22,7 @@ public class LI_ServiceImpl implements LI_Service {
 		try {
 		session.insert("li.insert", vo);
 		} catch (Exception e) {
-			log.info("서비스 인서트 에러 : "+ e);
+			log.info("�꽌鍮꾩뒪 �씤�꽌�듃 �뿉�윭 : "+ e);
 		}
 	}
 
@@ -31,13 +31,13 @@ public class LI_ServiceImpl implements LI_Service {
 		List<LI_VO> vvo;
 		try {
 			log.info(vo.getLi_b_type());
-			log.info("서비스 쿼리문 확인");
+			log.info("�꽌鍮꾩뒪 荑쇰━臾� �솗�씤");
 			vvo = session.selectList("li.get_list", vo);
 			session.commit();
-			log.info("서비스 쿼리문 전송 성공");
+			log.info("�꽌鍮꾩뒪 荑쇰━臾� �쟾�넚 �꽦怨�");
 			return vvo;
 		} catch (Exception e) {
-			System.out.println("서비스 에러 : "+e);
+			System.out.println("�꽌鍮꾩뒪 �뿉�윭 : "+e);
 			return null;
 		}
 
