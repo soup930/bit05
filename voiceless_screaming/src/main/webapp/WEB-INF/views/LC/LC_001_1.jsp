@@ -18,17 +18,7 @@
 <!-- 	-------------------------------------------------------------------------------------->	
 <!-- 지도 부분 -->
  	<div id="wrapper1" class="container">
-<<<<<<< HEAD
-	
-		<div id="map" style="width:500px;height:400px;"></div>
-		
-		거리 : <span id="distance"></span>
-		<br>
-		도보 시간 : <span id="walkTime"></span>
-		<br>
-		자전거 시간 : <span id="bycicleTime"></span>
-		
-=======
+
  	
 	<h5 class="pb-4 mb-4 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
        	 코스 등록
@@ -72,7 +62,6 @@
 		
 	
 	
->>>>>>> c81d10205408d59ea8bd5d0212b482d29d5e96ee
 	</div>
 	
 	
