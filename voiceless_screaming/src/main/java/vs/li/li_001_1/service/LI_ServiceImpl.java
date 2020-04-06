@@ -35,6 +35,8 @@ public class LI_ServiceImpl implements LI_Service {
 			vvo = session.selectList("li.get_list", vo);
 			session.commit();
 			log.info("�꽌鍮꾩뒪 荑쇰━臾� �쟾�넚 �꽦怨�");
+			log.info(vo.getLi_text());
+			log.info("서비스 쿼리문 전송 성공");
 			return vvo;
 		} catch (Exception e) {
 			System.out.println("�꽌鍮꾩뒪 �뿉�윭 : "+e);

@@ -3,9 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.ma</groupId> 
+	<groupId>org.ma</groupId>
 	<artifactId>ma_001</artifactId>
-	<name>voiceless_screaming</name> 
+	<name>voiceless_screaming</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -192,7 +192,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.12</version>
+			<version>1.18.10</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -201,17 +201,18 @@
 			<artifactId>HikariCP</artifactId>
 			<version>3.4.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.1.0</version>
+			<version>3.4.6</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>1.1.0</version>
+			<version>1.3.2</version>
 		</dependency>
-
 
 		<!-- Local -->
 		<!-- <dependency> <groupId>ojdbc</groupId> <artifactId>ojdbc6</artifactId> 
@@ -225,11 +226,6 @@
 			<groupId>poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.13-all</version>
-		</dependency>
-		<dependency>
-			<groupId>log</groupId>
-			<artifactId>log4sql</artifactId>
-			<version>1.1</version>
 		</dependency>
 
 		<!-- 타일즈 관련 라이브러리 -->
@@ -260,11 +256,6 @@
 			<groupId>poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.13-all</version>
-		</dependency>
-		<dependency>
-			<groupId>log</groupId>
-			<artifactId>log4sql</artifactId>
-			<version>1.1</version>
 		</dependency>
 
 		<!-- 파일 업로드 -->

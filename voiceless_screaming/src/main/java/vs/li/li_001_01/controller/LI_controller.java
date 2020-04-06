@@ -70,6 +70,11 @@ public class LI_controller {
 		log.info("---------�옉�꽦 �셿猷�----------------");
 		model.addAttribute("message", "湲��옉�꽦�씠 �셿猷뚮릺�뿀�뒿�땲�떎.");
 		return "redirect:/li/li001_1";
+		log.info("---------작성 완료----------------");
+		//작성 완료 메세지
+		model.addAttribute("message", "ok");
+		return "redirect:/li/li_001_1";
+>>>>>>> fef166f299d911d99d58d4832cf034d9ca75d765
 	}
 	
 }
