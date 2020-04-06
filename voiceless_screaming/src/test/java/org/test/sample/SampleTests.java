@@ -24,7 +24,6 @@ public class SampleTests {
 	public void testExist() {
 		
 		assertNotNull(restaurant);
-		
 		log.info(restaurant);
 		log.info("---------------------");
 		log.info(restaurant.getChef());

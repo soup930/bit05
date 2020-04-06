@@ -13,6 +13,9 @@
 .distanceInfo {position:relative;top:5px;left:5px;list-style:none;margin:0;}
 .distanceInfo .label {display:inline-block;width:50px;}
 .distanceInfo:after {content:none;}
+#course{height:500px;margin:10px auto;align:center;}
+#map {float:left;}
+#mapText {float:left;}
 </style>
 	
 <!-- 	-------------------------------------------------------------------------------------->	
@@ -24,33 +27,44 @@
       </font></font></h5>
 	<br>
 	
-	<div class="col-md-8">
-		<div id="map" style="width:500px;height:400px;"></div>
-	</div>
+	<div id="course">
 	
-	<div class="col-md-4">
-		<h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+		<div id="map" style="width:600px;height:500px;"></div>
+	
+	
+	<div class="col-md-4" id="mapText">
+		<div class="p-4">
+		<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
        	 거리 : <span id="distance"></span>
-     	 </font></font></h5>
+     	 </font></font></h3>
+     	 </div>
    		<br>
       
-      <h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      <div class="p-4">
+      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
        	 도보 시간 : <span id="walkTime"></span>
-      </font></font></h5>
+      </font></font></h3>
+      </div>
       <br>
       
-      <h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      <div class="p-4">
+      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
        	자전거 시간 : <span id="bycicleTime"></span>
-      </font></font></h5>
+      </font></font></h3>
+      </div>
       <br>
       
-      <h5 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      <div class="p-4">
+      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
        	 출발지 : <span id="start"></span>
-      </font></font></h5>
+      </font></font></h3>
+      </div>
       <br>
+    </div>
     </div>
 		
 			
+	<div class="row">
 	<span>상세 정보</span>
 		<br>
 		
@@ -59,7 +73,7 @@
 		썸네일 : <br>
 		내용 : <br>
 		
-	
+	</div>
 	
 	</div>
 	
