@@ -93,6 +93,7 @@
 		};
 	
 		var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+		var geocoder = new kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체를 생성합니다
 		
 		//HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 		if (navigator.geolocation) {
