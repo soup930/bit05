@@ -24,7 +24,7 @@ public class LI_controller {
 
 		log.info("----------------------�썑湲� 寃뚯떆�뙋view-------------------");
 
-		vo.setLi_b_type("�옣鍮꾧쾶�떆�뙋");
+		vo.setLi_b_type("장비게시판");
 		
 		model.addAttribute("list", service.get_list(vo));
 

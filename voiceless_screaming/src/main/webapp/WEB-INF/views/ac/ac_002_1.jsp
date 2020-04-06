@@ -21,11 +21,11 @@
 					<table class="table table-striped table-bordered table-hover">
 						<thead>
 							<tr>
-								<th>#번호</th>
+								<th>번호</th>
 								<th>제목</th>
-								<th>작성자</th>
-								<th>작성일</th>
-								<th>수정일</th>
+								<th>내용</th>
+								<th>조회수</th>
+								<th>추천수</th>
 							</tr>
 						</thead>
 						<c:forEach items="${data}" var="data">
@@ -33,8 +33,8 @@
 								<td>${data.co_b_index}</td>
 								<td>${data.co_b_title}</td>
 								<td>${data.co_b_text}</td>
-								<td></td>
-								<td></td>
+								<td>${data.co_b_see}</td>
+								<td>${data.co_b_good}</td>
 							</tr>
 						</c:forEach>
 					</table>

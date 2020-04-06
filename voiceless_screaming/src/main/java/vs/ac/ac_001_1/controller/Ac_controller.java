@@ -13,7 +13,8 @@ import vs.ac.ac_001_1.domain.AcVO;
 
 public interface Ac_controller {
  
-	public ModelAndView Ac_List(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public void ac_List(Model model,AcVO acvo) throws Exception;
+	
 
 	//public String ac_register(AcVO acvo, RedirectAttributes rttr);
 	
