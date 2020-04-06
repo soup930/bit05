@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import lombok.extern.log4j.Log4j;
 import vs.li.li_001_01.vo.LI_VO;
+import vs.li.li_001_01.vo.PageUtil;
+import vs.li.li_001_01.vo.Page_VO;
+import vs.li.li_001_1.dto.Page_DTO;
 import vs.li.li_001_1.service.LI_Service;
 import lombok.AllArgsConstructor;
 
@@ -20,13 +23,16 @@ public class LI_controller {
 	private LI_Service service;
 
 	@RequestMapping(value = "/li_001_1", method = RequestMethod.GET)
-	public void li_review(Model model,LI_VO vo) {
+	public void li_review(Model model, /* LI_VO vo, */Page_DTO dto) {
 
+		dto.setBoard("장비게시판");
 		log.info("----------------------후기 게시판view-------------------");
 
-		vo.setLi_b_type("장비게시판");
-		
-		model.addAttribute("list", service.get_list(vo));
+		/*
+		 * vo.setLi_b_type("장비게시판");
+		 */		
+		model.addAttribute("list", service.get_list(dto));
+		model.addAttribute("pageUtil",new PageUtil(dto,service.get_total()));
 
 	}
 	
