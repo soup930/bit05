@@ -68,8 +68,9 @@ public class LI_controller {
 		service.li_regist(vo);
 
 		log.info("---------작성 완료----------------");
-		model.addAttribute("message", "글작성이 완료되었습니다.");
-		return "redirect:/li/li001_1";
+		//작성 완료 메세지
+		model.addAttribute("message", "ok");
+		return "redirect:/li/li_001_1";
 	}
 	
 }

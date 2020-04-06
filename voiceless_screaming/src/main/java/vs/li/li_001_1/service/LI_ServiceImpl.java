@@ -33,7 +33,7 @@ public class LI_ServiceImpl implements LI_Service {
 			log.info(vo.getLi_b_type());
 			log.info("서비스 쿼리문 확인");
 			vvo = session.selectList("li.get_list", vo);
-			session.commit();
+			log.info(vo.getLi_text());
 			log.info("서비스 쿼리문 전송 성공");
 			return vvo;
 		} catch (Exception e) {
