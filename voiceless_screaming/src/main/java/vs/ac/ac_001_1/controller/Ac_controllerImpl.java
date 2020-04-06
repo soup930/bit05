@@ -1,24 +1,46 @@
 package vs.ac.ac_001_1.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import lombok.extern.log4j.Log4j;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import vs.ac.ac_001_1.domain.AcVO;
+import vs.ac.ac_001_1.service.Ac_Service;
 
 @Controller
-@Log4j
-@RequestMapping("/ac/*")
-public class Ac_controller {
+public class Ac_controllerImpl implements Ac_controller{
+	 
+	@Autowired
+	Ac_Service ac_service;
+	@Autowired
+	AcVO acvo;
 	
+	@Override
 	@RequestMapping(value="/ac_001_1")
-	public void regist(){
-		log.info("................");
+	public ModelAndView Ac_List(HttpServletRequest request, HttpServletResponse response) throws Exception {
+			
+		System.out.println("¿©±â´Â ControllerImpl");
+
+		List<AcVO> list = ac_service.Ac_List();
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("ac/ac_002_1");
+
+		return mav;
+		
+		
 	}
-	
-	
-	
+
+		
 	
 	
 	
