@@ -126,6 +126,12 @@ $RECYCLE.BIN/
 *.lnk
 
 *.xml
+<<<<<<< HEAD
 *.MF
 *.properties
 *.classpath
+=======
+*.properties
+*.MF
+*.classpath
+>>>>>>> 6e51ca7421f09d2056909ade5b9a0ff6fe1113bb
