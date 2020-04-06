@@ -128,4 +128,7 @@ $RECYCLE.BIN/
 *.xml
 *.MF
 *.properties
+<<<<<<< HEAD
 *.classpath
+=======
+>>>>>>> f8cfe39e4c6225993d59ddd0b5808dbe332045e5
