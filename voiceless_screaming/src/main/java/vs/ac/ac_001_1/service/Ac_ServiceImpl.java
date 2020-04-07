@@ -21,7 +21,7 @@ public class Ac_ServiceImpl implements Ac_Service{
 	 
 	
 	public List<AcVO> Ac_List() { 
-		System.out.println("¿©±â´Â ServiceImpl");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ServiceImpl");
 		
 		List<AcVO> list = acdao.Ac_List();
 		
