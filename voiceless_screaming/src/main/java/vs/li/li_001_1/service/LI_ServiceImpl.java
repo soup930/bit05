@@ -49,10 +49,10 @@ public class LI_ServiceImpl implements LI_Service {
 	}
 	
 	@Override
-	public int get_total() {
+	public int get_total(Page_DTO dto) {
 		try {
 			log.info( "get_total 쿼리문 확인");
-			return session.selectOne("li.get_total");
+			return session.selectOne("li.get_total",dto);
 		} catch (Exception e) {
 			System.out.println("서비스 에러 : "+e);
 			return 0;
