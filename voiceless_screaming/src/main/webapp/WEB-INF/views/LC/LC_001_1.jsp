@@ -4,7 +4,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-	<style>
+	
+<style>
 .dot {overflow:hidden;float:left;width:12px;height:12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png');}    
 .dotOverlay {position:relative;bottom:10px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;font-size:12px;padding:5px;background:#fff;}
 .dotOverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}    
@@ -13,26 +14,77 @@
 .distanceInfo {position:relative;top:5px;left:5px;list-style:none;margin:0;}
 .distanceInfo .label {display:inline-block;width:50px;}
 .distanceInfo:after {content:none;}
+#course{height:500px;margin:10px auto;align:center;}
+#map {float:left;}
+#mapText {float:left;}
 </style>
 	
 <!-- 	-------------------------------------------------------------------------------------->	
 <!-- 지도 부분 -->
  	<div id="wrapper1" class="container">
+
+ 	
+	<h5 class="pb-4 mb-4 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 코스 등록
+      </font></font></h5>
+	<br>
 	
-		<div id="map" style="width:500px;height:400px;"></div>
+	<div id="course">
+	
+		<div id="map" style="width:600px;height:500px;"></div>
+	
+	
+	<div class="col-md-4" id="mapText">
+		<div class="p-4">
+		<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 거리 : <span id="distance"></span>
+     	 </font></font></h3>
+     	 </div>
+   		<br>
+      
+      <div class="p-4">
+      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 도보 시간 : <span id="walkTime"></span>
+      </font></font></h3>
+      </div>
+      <br>
+      
+      <div class="p-4">
+      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	자전거 시간 : <span id="bycicleTime"></span>
+      </font></font></h3>
+      </div>
+      <br>
+      
+      <div class="p-4">
+      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+       	 출발지 : <span id="start"></span>
+      </font></font></h3>
+      </div>
+      <br>
+    </div>
+    </div>
 		
-		거리 : <span id="distance"></span>
+			
+	<div class="row">
+	<span>상세 정보</span>
 		<br>
-		도보 시간 : <span id="walkTime"></span>
-		<br>
-		자전거 시간 : <span id="bycicleTime"></span>
+		
+	제목 : <input type="text"/> <br>
+		지역 : <input type="SelectBox"/> <input type="SelectBox"/><br>
+		썸네일 : <br>
+		내용 : <br>
 		
 	</div>
+	
+	</div>
+	
 	
 	
 <!-- 	-------------------------------------------------------------------------------------->	
 <!-- 스크립트 부분 -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=12678188621fb459c68a7473a7071d75"></script>
+<!-- 스크립트 부분 -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=12678188621fb459c68a7473a7071d75&libraries=services"></script>
 	<!-- services와 clusterer, drawing 라이브러리 불러오기 -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=82ad3ba87fbee08d3a9f5cdbcb70051d&libraries=services,clusterer,drawing"></script>
 	
@@ -44,7 +96,6 @@
 		};
 	
 		var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-		var geocoder = new kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체를 생성합니다
 		
 		//HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 		if (navigator.geolocation) {
@@ -85,10 +136,51 @@
 
 		    // 마우스로 클릭한 위치입니다 
 		    var clickPosition = mouseEvent.latLng;
+		    
 
 		    // 지도 클릭이벤트가 발생했는데 선을 그리고있는 상태가 아니면
 		    if (!drawingFlag) {
+		    	
+		    	//HTML에 표시되는 데이터 초기화
+		    	document.getElementById('distance').innerHTML= '';
+			    document.getElementById('walkTime').innerHTML = '';
+			    document.getElementById('bycicleTime').innerHTML = '';
+			    document.getElementById('start').innerHTML= '';
+		    	
+		    	// 주소-좌표 변환 객체를 생성합니다
+				var geocoder = new kakao.maps.services.Geocoder();
+				var infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
 
+				  searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
+				        if (status === kakao.maps.services.Status.OK) {
+				            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+				            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+				            
+				            content = '<div class="bAddr">' +
+				                            '<span class="title">법정동 주소정보</span>' + 
+				                            detailAddr + 
+				                        '</div>';
+		
+				            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
+				            infowindow.setContent(content);
+				      
+				            
+				            document.getElementById('start').innerHTML=content;
+				            
+
+				        }   
+				    });
+				
+				  function searchAddrFromCoords(coords, callback) {
+					    // 좌표로 행정동 주소 정보를 요청합니다
+					    geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
+					}
+			
+					function searchDetailAddrFromCoords(coords, callback) {
+					    // 좌표로 법정동 상세 주소 정보를 요청합니다
+					    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+					}
+				
 		        // 상태를 true로, 선이 그리고있는 상태로 변경합니다
 		        drawingFlag = true;
 		        
@@ -343,8 +435,12 @@
 		    return content;
 		    
 		}
- 
+		
+		
+		
+
 	</script>
+	
 	
 <!-- 	-------------------------------------------------------------------------------------->	
 
