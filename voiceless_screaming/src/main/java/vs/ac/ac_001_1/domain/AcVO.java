@@ -2,12 +2,13 @@ package vs.ac.ac_001_1.domain;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
-@Data
+@Component
 public class AcVO {
-<<<<<<< HEAD
-=======
+
 	 
 	private String co_b_index;
 	private String co_b_text;
@@ -39,20 +40,5 @@ public class AcVO {
 	public void setCo_b_day(String co_b_day) {
 		this.co_b_day = co_b_day;
 	}
->>>>>>> f8cfe39e4c6225993d59ddd0b5808dbe332045e5
-	
-	private int co_b_index;
-	private String co_b_title;
-	private String co_b_text;
-	private int co_b_see;
-	private int co_b_good;
-	private Date co_b_date;
-	private String co_b_day; 
-	private String co_b_area;
-	private String co_b_period;
-	private String co_b_state;
-	private int co_b_count;
-	private String co_b_type;
-	
-	
+
 }
