@@ -128,11 +128,6 @@ $RECYCLE.BIN/
 *.xml
 *.MF
 *.properties
-<<<<<<< HEAD
 *.classpath
-=======
-<<<<<<< HEAD
->>>>>>> 519b44b676d3b4c4cd3dde93d956a7b29de81b8e
-=======
->>>>>>> f8cfe39e4c6225993d59ddd0b5808dbe332045e5
->>>>>>> ChanChan
+.gitignore
+
