@@ -1,4 +1,4 @@
-package vs.home.controller;
+package vs.sp.sp_003.contoller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Handles requests for the application home page.
+ * Handles requests for the application shop page.
  */
 @Controller
-public class HomeController {
+public class SP_003_Controller {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(SP_003_Controller.class);
 	
 	/**
-	 * Simply selects the home view to render by returning its name.
+	 * Simply selects the shop view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	@RequestMapping(value = "/sp_003_1", method = RequestMethod.GET)
+	public String shop(Locale locale, Model model) {
+		logger.info("Welcome shop! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -33,7 +33,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "SP/SP_003_1";
 	}
 	
 }
