@@ -5,6 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AcVO {
+
+@Component
+public class AcVO {
+
 	 
 	private String co_b_index;
 	private String co_b_text;
