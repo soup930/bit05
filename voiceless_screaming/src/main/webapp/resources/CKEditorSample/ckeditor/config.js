@@ -26,15 +26,12 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about' }
 	];
 
-<<<<<<< HEAD
-=======
 	config.language = 'ko';
 	
 	config.width = 800;
 	config.height = 500;
 	config.resize_enabled = false;  //  false로 상태 변경
 	
->>>>>>> 566bf3d2ad4a251754fff157dffe68026e37830c
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';

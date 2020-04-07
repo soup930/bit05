@@ -32,7 +32,7 @@ public class LI_controller {
 		 * vo.setLi_b_type("장비게시판");
 		 */		
 		model.addAttribute("list", service.get_list(dto));
-		model.addAttribute("pageUtil",new PageUtil(dto,service.get_total()));
+		model.addAttribute("pageUtil",new PageUtil(dto,service.get_total(dto)));
 
 	}
 	

@@ -14,6 +14,6 @@ public interface LI_Service {
 	
 	public List<LI_VO> get_list(Page_DTO dto);
 	
-	public int get_total();
+	public int get_total(Page_DTO dto);
 
 }
