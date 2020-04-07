@@ -23,7 +23,7 @@
 <!-- 지도 부분 -->
  	<div id="wrapper1" class="container">
 
- 	
+ 	...
 	<h5 class="pb-4 mb-4 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
        	 코스 등록
       </font></font></h5>
