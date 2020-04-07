@@ -5,28 +5,43 @@
 	pageEncoding="UTF-8"%>
 <html>
 <title>후기 게시판</title>
+ <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+function SelectValue(idvalue) {
+    var obj_id = document.getElementById('s_id');
+    obj_id.value = idvalue;
+ }
+</script>
 </head>
 <body background-color:#fff;>
+<input type="text" id="s_id">
+   <select name="id" onChange="SelectValue(this.value)">
+      <option selected>선택
+      <option value="g_id1">g_id1
+      <option value="g_id2">g_id2
+      <option value="g_id3">g_id3
+   </select>
+   
 	<div class="container">
 		<h1>XXXXXXX 게시판</h1>
 		<div class="table-responsive">
 			<table class="table">
 				<tr>
 					<td>게시물 번호</td>
-					<td>게시글 제목</td>
 					<td>장비 분류</td>
-					<td>숙련도</td>
+					<td>게시글 제목</td>
+					<td>장비 종류</td>
 					<td>작성자</td>
 					<td>작성날자</td>
 				</tr>
 				<c:forEach var="board" items="${list }">
 					<tr>
 						<td>${board.li_index }</td>
-						<td>${board.li_b_type }</td>
-						<td>${board.li_category }</td>
-						<td>${board.li_date }</td>
-						<td>${board.li_text }</td>
 						<td>${board.li_type }</td>
+						<td>${board.li_title }</td>
+						<td>${board.li_category }</td>
+						<td>${board.m_index }</td>
+						<td>${board.li_date }</td>
 					</tr>
 				</c:forEach>
 			</table>

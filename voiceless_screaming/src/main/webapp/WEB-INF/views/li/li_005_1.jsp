@@ -19,7 +19,7 @@
 						<div class="input-group-prepend">
 							<label class="input-group-text">제목</label>
 						</div>
-						<input type="text" class="form-control">
+						<input name="li_title" type="text" class="form-control">
 					</div>
 				</div>
 			</div>

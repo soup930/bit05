@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 public class LI_VO {
 	private String li_text;
 	private String li_category;
-	private String m_index = "ineddd";
+	private String m_index = "test_index";
 	private String li_index;
 	private String li_b_type;
 	private String li_type;
 	private String li_thumbnail;
 	private String li_picture;
 	private String li_date;
+	private String li_title;
 	private int li_see,li_good;
 	
 	public String getLi_text() {
@@ -83,14 +84,18 @@ public class LI_VO {
 	public void setLi_good(int li_good) {
 		this.li_good = li_good;
 	}
-	
+	public String getLi_title() {
+		return li_title;
+	}
+	public void setLi_title(String li_title) {
+		this.li_title = li_title;
+	}
 	@Override
 	public String toString() {
 		return "LI_VO [li_text=" + li_text + ", li_category=" + li_category + ", m_index=" + m_index + ", li_index="
 				+ li_index + ", li_b_type=" + li_b_type + ", li_type=" + li_type + ", li_thumbnail=" + li_thumbnail
-				+ ", li_picture=" + li_picture + ", li_date=" + li_date + ", li_see=" + li_see + ", li_good=" + li_good
-				+ "]";
+				+ ", li_picture=" + li_picture + ", li_date=" + li_date + ", li_title=" + li_title + ", li_see="
+				+ li_see + ", li_good=" + li_good + "]";
 	}
-
-
+	
 }
