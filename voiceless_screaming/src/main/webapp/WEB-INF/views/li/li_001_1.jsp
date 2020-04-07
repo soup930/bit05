@@ -33,14 +33,14 @@
 		</div>
 		<ul class="pagination justify-content-end">
 								<c:if test="${pageUtil.prev }">
-							<li class="page-item"><a class="page-link" href="/board/list?page=${pageUtil.start-1}">Previous</a></li>
+							<li class="page-item"><a class="page-link" href="/li/li_001_1?page=${pageUtil.start-1}">Previous</a></li>
 						</c:if>
 						<c:forEach begin="${pageUtil.start }" end="${pageUtil.end }"
 							var="pNum">
-							<li class="page-item ${pNum==pageUtil.dto.page?'active':"" }"><a class="page-link" href="/board/list?page=${pNum }">${pNum }</a></li>
+							<li class="page-item ${pNum==pageUtil.dto.page?'active':"" }"><a class="page-link" href="/li/li_001_1?page=${pNum }">${pNum }</a></li>
 						</c:forEach>
 						<c:if test="${pageUtil.next }">
-							<li class="page-item"><a class="page-link" href="/board/list?page=${pageUtil.end+1 }">Next</a>
+							<li class="page-item"><a class="page-link" href="/li/li_001_1?page=${pageUtil.end+1 }">Next</a>
 							</li>
 							</c:if>
 							</ul>
