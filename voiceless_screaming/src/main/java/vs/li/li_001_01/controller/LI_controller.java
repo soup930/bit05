@@ -69,6 +69,7 @@ public class LI_controller {
 		log.info("텍스트------"+vo.getLi_text());
 		log.info("타입"+vo.getLi_type());
 		log.info("카테고리-----"+vo.getLi_category());
+		log.info("제목-----"+vo.getLi_title());
 		log.info("게시판유형@@@@@"+vo.getLi_b_type());
 		
 		service.li_regist(vo);
@@ -78,5 +79,6 @@ public class LI_controller {
 		model.addAttribute("message", "ok");
 		return "redirect:/li/li_001_1";
 	}
-	
+	 
+
 }
