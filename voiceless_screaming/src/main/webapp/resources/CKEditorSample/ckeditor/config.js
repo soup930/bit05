@@ -28,7 +28,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	config.language = 'ko';
 	
-	config.width = 800;
+	config.width = 960;
 	config.height = 500;
 	config.resize_enabled = false;  //  false로 상태 변경
 	

@@ -14,69 +14,125 @@
 .distanceInfo {position:relative;top:5px;left:5px;list-style:none;margin:0;}
 .distanceInfo .label {display:inline-block;width:50px;}
 .distanceInfo:after {content:none;}
-#course{height:500px;margin:10px auto;align:center;}
-#map {float:left;}
-#mapText {float:left;}
+.course-text {margin-bottom:30px;}
+.input-group-prepend {width:80px;}
 </style>
+<!-- 	-------------------------------------------------------------------------------------->	
+
+	<!-- ck에디터 -->
+	<script type="text/javascript"
+	src="../../../resources/CKEditorSample/ckeditor/ckeditor.js"></script>
 	
 <!-- 	-------------------------------------------------------------------------------------->	
 <!-- 지도 부분 -->
- 	<div id="wrapper1" class="container">
-
- 	...
-	<h5 class="pb-4 mb-4 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 코스 등록
-      </font></font></h5>
-	<br>
+ 	<div class="container">
 	
-	<div id="course">
-	
-		<div id="map" style="width:600px;height:500px;"></div>
-	
-	
-	<div class="col-md-4" id="mapText">
-		<div class="p-4">
-		<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 거리 : <span id="distance"></span>
-     	 </font></font></h3>
-     	 </div>
-   		<br>
-      
-      <div class="p-4">
-      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 도보 시간 : <span id="walkTime"></span>
-      </font></font></h3>
-      </div>
-      <br>
-      
-      <div class="p-4">
-      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	자전거 시간 : <span id="bycicleTime"></span>
-      </font></font></h3>
-      </div>
-      <br>
-      
-      <div class="p-4">
-      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 출발지 : <span id="start"></span>
-      </font></font></h3>
-      </div>
-      <br>
-    </div>
-    </div>
-		
-			
-	<div class="row">
-	<span>상세 정보</span>
+		<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top:50px"><font style="vertical-align: inherit; font-weight:bold;"><font style="vertical-align: inherit;">
+	       	 코스 등록
+	      </font></font></h3>
 		<br>
 		
-	제목 : <input type="text"/> <br>
-		지역 : <input type="SelectBox"/> <input type="SelectBox"/><br>
-		썸네일 : <br>
-		내용 : <br>
+		<div class="row justify-content-center">
 		
-	</div>
-	
+			<div id="map" class="col-8" style="width:500px;height:500px;"></div>
+		
+		
+		<div class="col-4" id="mapText">
+			<div class="p-4">
+			<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	 거리 : <span id="distance"></span>
+	     	 </font></font></h3>
+	     	 </div>
+	   		<br>
+	      
+	      <div class="p-4">
+	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	 도보 시간 : <span id="walkTime"></span>
+	      </font></font></h3>
+	      </div>
+	      <br>
+	      
+	      <div class="p-4">
+	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	자전거 시간 : <span id="bycicleTime"></span>
+	      </font></font></h3>
+	      </div>
+	      <br>
+	      
+	      <div class="p-4">
+	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	 출발지 : <span id="start"></span>
+	      </font></font></h3>
+	      </div>
+	      <br>
+	    </div>
+	    </div>
+	    
+	    <h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top:50px"><font style="vertical-align: inherit; font-weight:bold;"><font style="vertical-align: inherit;">
+	       	 상세 정보
+	      </font></font></h3>
+		<br>
+		
+		<div class="row justify-content-left">
+		
+		<ul class="list-unstyled" style="margin-left:30px;">
+			<li class="course-text">
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">제목</font></h5>    
+						</div>
+						<input type="text" class="form-control" id="title" name="" placeholder="제목을 입력해주세요.">
+					</div>
+			</li>
+			
+			<li class="course-text">
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">지역</font></h5>    
+						</div>
+						
+						<div class="col-md-2" style="margin-left:-15px;">
+						<input type="text" class="form-control" id="firstAddress" name="">
+						</div>
+						
+						<div class="col-md-2">
+						<input type="text" class="form-control" id="secondAddress" name="">
+						</div>
+						
+						<div class="col-md-2">
+						<input type="text" class="form-control" id="thirdAddress" name="">
+						</div>
+					</div>
+			</li>
+			
+			<li class="course-text">
+
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">썸네일</font></h5>    
+						</div>
+						<input type="text" class="form-control" id="title" name="">
+					</div>
+			</li>
+				
+			<li class="course-text">
+					
+					<div class="col_c" style="margin-bottom: 30px">
+						<div class="input-group">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">내용</font></h5>    
+						</div>
+							<textarea class="textarea" name="li_text" id="li_place"></textarea>
+							<script type="text/javascript">
+								CKEDITOR.replace('li_place');
+							</script>
+						</div>
+					</div>
+			</li>
+				
+			</ul>
+		</div>
+		
 	</div>
 	
 	
@@ -153,13 +209,12 @@
 
 				  searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
 				        if (status === kakao.maps.services.Status.OK) {
-				            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-				            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+				            /* var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : ''; */
+				           var detailAddr = '<div>' + result[0].address.address_name + '</div>';
 				            
-				            content = '<div class="bAddr">' +
-				                            '<span class="title">법정동 주소정보</span>' + 
+				            content = '<p class="bAddr">' +
 				                            detailAddr + 
-				                        '</div>';
+				                        '</p>';
 		
 				            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
 				            infowindow.setContent(content);
