@@ -26,6 +26,8 @@
 <!-- 	-------------------------------------------------------------------------------------->	
 <!-- 지도 부분 -->
  	<div class="container">
+ 	
+ 	<form>
 	
 		<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top:50px"><font style="vertical-align: inherit; font-weight:bold;"><font style="vertical-align: inherit;">
 	       	 코스 등록
@@ -92,15 +94,15 @@
 						</div>
 						
 						<div class="col-md-2" style="margin-left:-15px;">
-						<input type="text" class="form-control" id="firstAddress" name="">
+						<text class="form-control" id="firstAddress" name=""/>
 						</div>
 						
 						<div class="col-md-2">
-						<input type="text" class="form-control" id="secondAddress" name="">
+						<text class="form-control" id="secondAddress" name=""/>
 						</div>
 						
 						<div class="col-md-2">
-						<input type="text" class="form-control" id="thirdAddress" name="">
+						<text class="form-control" id="thirdAddress" name=""/>
 						</div>
 					</div>
 			</li>
@@ -111,7 +113,9 @@
 						<div class="input-group-prepend">
 							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">썸네일</font></h5>    
 						</div>
-						<input type="text" class="form-control" id="title" name="">
+						<div class="custom-file">
+                 		 &nbsp;<input type="file" class="form-control-file" id="exampleFormControlFile1">
+             			</div>
 					</div>
 			</li>
 				
@@ -132,6 +136,9 @@
 				
 			</ul>
 		</div>
+		
+		<input type="text" id="arrXY" name="arrXY"/>
+		</form>
 		
 	</div>
 	
@@ -210,7 +217,7 @@
 				  searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
 				        if (status === kakao.maps.services.Status.OK) {
 				            /* var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : ''; */
-				           var detailAddr = '<div>' + result[0].address.address_name + '</div>';
+				           var detailAddr = result[0].address.address_name;
 				            
 				            content = '<p class="bAddr">' +
 				                            detailAddr + 
@@ -218,9 +225,17 @@
 		
 				            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
 				            infowindow.setContent(content);
-				      
+				      		
+				            var contentArr = detailAddr.split(' ');
+				            
+				            console.log(contentArr[0]);
+				            console.log(contentArr[1]);
+				            console.log(contentArr[2]);
 				            
 				            document.getElementById('start').innerHTML=content;
+				            document.getElementById('firstAddress').innerHTML=contentArr[0];
+				            document.getElementById('secondAddress').innerHTML=contentArr[1];
+				            document.getElementById('thirdAddress').innerHTML=contentArr[2];
 				            
 
 				        }   
@@ -283,6 +298,10 @@
 
 		        var distance = Math.round(clickLine.getLength());
 		        displayCircleDot(clickPosition, distance);
+		        
+		        console.log(path);
+		        
+		        document.getElementById('arrXY').value = path;
 		    }
 		});
 		    
