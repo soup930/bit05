@@ -27,7 +27,7 @@
 <!-- 지도 부분 -->
  	<div class="container">
  	
- 	<form>
+ 	<form name="upload" action="/lc/upload" method="get">
 	
 		<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top:50px"><font style="vertical-align: inherit; font-weight:bold;"><font style="vertical-align: inherit;">
 	       	 코스 등록
@@ -42,28 +42,28 @@
 		<div class="col-4" id="mapText">
 			<div class="p-4">
 			<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	 거리 : <span id="distance"></span>
+	       	 거리 : <span id="lc_distance" name="lc_distance"></span>
 	     	 </font></font></h3>
 	     	 </div>
 	   		<br>
 	      
 	      <div class="p-4">
 	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	 도보 시간 : <span id="walkTime"></span>
+	       	 도보 시간 : <span id="lc_run" name="lc_run"></span>
 	      </font></font></h3>
 	      </div>
 	      <br>
 	      
 	      <div class="p-4">
 	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	자전거 시간 : <span id="bycicleTime"></span>
+	       	자전거 시간 : <span id="lc_cycle" name="lc_cycle"></span>
 	      </font></font></h3>
 	      </div>
 	      <br>
 	      
 	      <div class="p-4">
 	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	 출발지 : <span id="start"></span>
+	       	 출발지 : <span id="lc_address" name="lc_address"></span>
 	      </font></font></h3>
 	      </div>
 	      <br>
@@ -83,7 +83,19 @@
 						<div class="input-group-prepend">
 							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">제목</font></h5>    
 						</div>
-						<input type="text" class="form-control" id="title" name="" placeholder="제목을 입력해주세요.">
+						<input type="text" class="form-control" id="lc_title" name="lc_title" placeholder="제목을 입력해주세요.">
+					</div>
+			</li>
+			
+			<li class="course-text">
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">게시판</font></h5>    
+						</div>
+						<select class="custom-select d-block w-15" id="lc_type" name="lc_type">
+						 <option value>육상</option>
+						 <option>자전거</option>
+						</select>
 					</div>
 			</li>
 			
@@ -94,18 +106,19 @@
 						</div>
 						
 						<div class="col-md-2" style="margin-left:-15px;">
-						<text class="form-control" id="firstAddress" name=""/>
+						<text class="form-control" id="lc_area1" name="lc_area1"/>
 						</div>
 						
 						<div class="col-md-2">
-						<text class="form-control" id="secondAddress" name=""/>
+						<text class="form-control" id="lc_area2" name="lc_area2"/>
 						</div>
 						
 						<div class="col-md-2">
-						<text class="form-control" id="thirdAddress" name=""/>
+						<text class="form-control" id="lc_area3" name="lc_area3"/>
 						</div>
 					</div>
 			</li>
+		
 			
 			<li class="course-text">
 
@@ -114,7 +127,7 @@
 							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">썸네일</font></h5>    
 						</div>
 						<div class="custom-file">
-                 		 &nbsp;<input type="file" class="form-control-file" id="exampleFormControlFile1">
+                 		 &nbsp;<input type="file" class="form-control-file" id="exampleFormControlFile1" name="lc_tumbnail">
              			</div>
 					</div>
 			</li>
@@ -126,9 +139,9 @@
 						<div class="input-group-prepend">
 							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">내용</font></h5>    
 						</div>
-							<textarea class="textarea" name="li_text" id="li_place"></textarea>
+							<textarea class="textarea" name="lc_text" id="lc_text"></textarea>
 							<script type="text/javascript">
-								CKEDITOR.replace('li_place');
+								CKEDITOR.replace('lc_text');
 							</script>
 						</div>
 					</div>
@@ -137,7 +150,9 @@
 			</ul>
 		</div>
 		
-		<input type="text" id="arrXY" name="arrXY"/>
+		<input type="submit" value="업로드" />
+		
+		<input type="text" id="lc_xy_arr" name="lc_xy_arr"/>
 		</form>
 		
 	</div>

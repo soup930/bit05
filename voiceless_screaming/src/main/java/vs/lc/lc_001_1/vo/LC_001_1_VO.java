@@ -8,23 +8,23 @@ import lombok.Data;
 @Data
 public class LC_001_1_VO {
 
-	private String lc_index;	//°Ô½Ã±Û ¹øÈ£
-	private String m_index;		//ÀÛ¼ºÀÚ ¸â¹ö ¹øÈ£
-	private String lc_title;	//°Ô½Ã±Û Á¦¸ñ
-	private String lc_type;		//°Ô½Ã±Û À¯Çü(ÀÚÀü°Å, À°»ó)
-	private String lc_distance;	//°Å¸®
-	private String lc_run;		//µµº¸ ½Ã°£
-	private String lc_cycle;	//ÀÚÀü°Å ½Ã°£
-	private String lc_area1;	//Áö¿ª1 (½Ã)
-	private String lc_area2;	//Áö¿ª2 (±¸)
-	private String lc_area3;	//Áö¿ª3 (µ¿)
-	private String lc_thumbnail;	//½æ³×ÀÏ
-	private String lc_text;		//³»¿ë
-	private String lc_date;		//ÀÛ¼º ³¯Â¥
-	private int lc_good;		//ÁÁ¾Æ¿ä ¼ö
-	private int lc_see;			//Á¶È¸¼ö
-	private String lc_record;	//Æò±Õ ±â·Ï
-	private String lc_address;	//»ó¼¼ÁÖ¼Ò
-	private String lc_xy_arr;	//ÁÂÇ¥ ¹¶Ä¡
+	private String lc_index;	//ê²Œì‹œê¸€ ë²ˆí˜¸
+	private String m_index;		//ë©¤ë²„ ë²ˆí˜¸
+	private String lc_title;	//ê²Œì‹œê¸€ ì œëª©
+	private String lc_type;		//ì½”ìŠ¤ ìœ í˜•
+	private String lc_distance;	//ê±°ë¦¬
+	private String lc_run;		//ë„ë³´ ì‹œê°„
+	private String lc_cycle;	//ìì „ê±° ì‹œê°„
+	private String lc_area1;	//ì§€ì—­1 (ì‹œ)
+	private String lc_area2;	//ì§€ì—­2 (êµ¬)
+	private String lc_area3;	//ì§€ì—­3 (ë™)
+	private String lc_thumbnail;	//ì¸ë„¤ì¼
+	private String lc_text;		//ë‚´ìš©
+	private String lc_date;		//ì‘ì„±ë‚ ì§œ
+	private int lc_good;		//ì¢‹ì•„ìš”
+	private int lc_see;			//ì¡°íšŒìˆ˜
+	private String lc_record;	//í‰ê·  ê¸°ë¡
+	private String lc_address;	//ì¶œë°œì§€ ìƒì„¸
+	private String lc_xy_arr;	//ì¢Œí‘œ
 	
 }
