@@ -18,7 +18,12 @@
 
 <!-- Custom styles for this template -->
 <link href="../../../resources/css/modern-business.css" rel="stylesheet">
-
+<style>
+.carousel-item {
+     height: auto;
+     width: 70%;
+}
+</style>
 </head>
 
 <body>
@@ -27,7 +32,7 @@
 	<nav
 		class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">자전거육상</a>
+			<a class="navbar-brand" href="/../">자전거육상</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -64,10 +69,10 @@
 							장비 </a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdownBlog">
-							<a class="dropdown-item" href="full-width.html">메뉴1</a> <a
-								class="dropdown-item" href="sidebar.html">메뉴2</a> <a
-								class="dropdown-item" href="faq.html">메뉴3</a> <a
-								class="dropdown-item" href="404.html">메뉴4</a>
+							<a class="dropdown-item" href="full-width.html">후기 게시판</a> <a
+								class="dropdown-item" href="sidebar.html">추천 게시판</a> <a
+								class="dropdown-item" href="faq.html">관리 게시판</a> <a
+								class="dropdown-item" href="404.html">장비 게시판</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog"

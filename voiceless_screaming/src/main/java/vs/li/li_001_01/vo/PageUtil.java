@@ -20,6 +20,7 @@ public class PageUtil {
 
 		int pageNum = dto.getPage();
 		int tempEnd = (int) (Math.ceil(pageNum / 10.0) * 10);
+		
 		this.start = tempEnd - 9 < 0 ? 1 : tempEnd - 9;
 		this.prev = this.start != 1;
 
