@@ -27,7 +27,7 @@
 <!-- 지도 부분 -->
  	<div class="container">
  	
- 	<form name="upload" action="/lc/upload" method="get">
+ 	<form name="upload" action="lc/uploadCourse" method="get">
 	
 		<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top:50px"><font style="vertical-align: inherit; font-weight:bold;"><font style="vertical-align: inherit;">
 	       	 코스 등록
@@ -42,28 +42,32 @@
 		<div class="col-4" id="mapText">
 			<div class="p-4">
 			<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	 거리 : <span id="lc_distance" name="lc_distance"></span>
+	       	 거리 : <span id="distance" name="distance"></span>
+	       	 <input type="hidden" id="lc_distance" name="lc_distance"/>
 	     	 </font></font></h3>
 	     	 </div>
 	   		<br>
 	      
 	      <div class="p-4">
 	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	 도보 시간 : <span id="lc_run" name="lc_run"></span>
+	       	 도보 시간 : <span id="run" name="run"></span>
+	       	 <input type="hidden" id="lc_run" name="lc_run"/>
 	      </font></font></h3>
 	      </div>
 	      <br>
 	      
 	      <div class="p-4">
 	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	자전거 시간 : <span id="lc_cycle" name="lc_cycle"></span>
+	       	자전거 시간 : <span id="cycle" name="cycle"></span>
+	       	<input type="hidden" id="lc_cycle" name="lc_cycle"/>
 	      </font></font></h3>
 	      </div>
 	      <br>
 	      
 	      <div class="p-4">
 	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	       	 출발지 : <span id="lc_address" name="lc_address"></span>
+	       	 출발지 : <span id="address" name="address"></span>
+	       	 <input type="hidden" id="lc_address" name="lc_address"/>
 	      </font></font></h3>
 	      </div>
 	      <br>
@@ -106,15 +110,18 @@
 						</div>
 						
 						<div class="col-md-2" style="margin-left:-15px;">
-						<text class="form-control" id="lc_area1" name="lc_area1"/>
+						<text class="form-control" id="area1" name="area1"></text>
+						<input type="hidden" id="lc_area1" name="lc_area1"/>
 						</div>
 						
 						<div class="col-md-2">
-						<text class="form-control" id="lc_area2" name="lc_area2"/>
+						<text class="form-control" id="area2" name="area2"></text>
+						<input type="hidden" id="lc_area2" name="lc_area2"/>
 						</div>
 						
 						<div class="col-md-2">
-						<text class="form-control" id="lc_area3" name="lc_area3"/>
+						<text class="form-control" id="area3" name="area3"></text>
+						<input type="hidden" id="lc_area3" name="lc_area3"/>
 						</div>
 					</div>
 			</li>
@@ -221,9 +228,9 @@
 		    	
 		    	//HTML에 표시되는 데이터 초기화
 		    	document.getElementById('distance').innerHTML= '';
-			    document.getElementById('walkTime').innerHTML = '';
-			    document.getElementById('bycicleTime').innerHTML = '';
-			    document.getElementById('start').innerHTML= '';
+			    document.getElementById('run').innerHTML = '';
+			    document.getElementById('cycle').innerHTML = '';
+			    document.getElementById('address').innerHTML= '';
 		    	
 		    	// 주소-좌표 변환 객체를 생성합니다
 				var geocoder = new kakao.maps.services.Geocoder();
@@ -247,10 +254,15 @@
 				            console.log(contentArr[1]);
 				            console.log(contentArr[2]);
 				            
-				            document.getElementById('start').innerHTML=content;
-				            document.getElementById('firstAddress').innerHTML=contentArr[0];
-				            document.getElementById('secondAddress').innerHTML=contentArr[1];
-				            document.getElementById('thirdAddress').innerHTML=contentArr[2];
+				            document.getElementById('address').innerHTML=content;
+				            document.getElementById('area1').innerHTML=contentArr[0];
+				            document.getElementById('area2').innerHTML=contentArr[1];
+				            document.getElementById('area3').innerHTML=contentArr[2];
+				            
+				            document.getElementById('lc_address').value=detailAddr;
+				            document.getElementById('lc_area1').value=contentArr[0];
+				            document.getElementById('lc_area2').value=contentArr[1];
+				            document.getElementById('lc_area3').value=contentArr[2];
 				            
 
 				        }   
@@ -316,7 +328,7 @@
 		        
 		        console.log(path);
 		        
-		        document.getElementById('arrXY').value = path;
+		        document.getElementById('lc_xy_arr').value = path;
 		    }
 		});
 		    
@@ -518,8 +530,12 @@
 		    content += '</ul>'
 
 			    document.getElementById('distance').innerHTML= distance/1000 + 'km';
-		    	document.getElementById('walkTime').innerHTML = walkHour + walkMin;
-		    	document.getElementById('bycicleTime').innerHTML = bycicleHour + bycicleMin;
+		    	document.getElementById('run').innerHTML = walkHour + walkMin;
+		    	document.getElementById('cycle').innerHTML = bycicleHour + bycicleMin;
+		    	
+		    	document.getElementById('lc_distance').value= distance/1000;
+		    	document.getElementById('lc_run').value = Math.floor(walkkTime / 60) + "시간 " + walkkTime % 60 +"분";
+		    	document.getElementById('lc_cycle').value = Math.floor(bycicleTime / 60) + "시간 " + bycicleTime % 60 + "분";
 
 		    return content;
 		    
