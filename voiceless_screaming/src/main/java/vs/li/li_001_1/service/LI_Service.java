@@ -15,5 +15,9 @@ public interface LI_Service {
 	public List<LI_VO> get_list(Page_DTO dto);
 	
 	public int get_total(Page_DTO dto);
+	
+	public List<LI_VO> search_list(LI_VO vo);
+	
+	public List<LI_VO> detail_page(String index);
 
 }

@@ -6,14 +6,19 @@
 <title>장비 게시판</title>
 <script type="text/javascript"
 	src="../../../resources/CKEditorSample/ckeditor/ckeditor.js"></script>
-<header> </header>
+	 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<%@ include file="../includes/middle.jsp"%>
 <div class="container">
 	<form id="form" method="post">
 	<input type="hidden" name="li_b_type" value="장비게시판">
 		<div class="content" style="width: 75%; margin-top: 30px;">
 			<div>
-				<div class="col-sm-7">
-					<h2>장비 게시판 ( ) 글작성</h2>
+				<div class="col-sm-12">
+					<h2>장비 게시판 ( 후기 게시판 ) 글작성</h2> <!-- 현재 임시방편 게시판 유형 결정되면 변수로 변경 -->
 					<br>
 					<div class="input-group mb-1">
 						<div class="input-group-prepend">
@@ -31,16 +36,16 @@
 						<select
 							name="li_type" class="custom-select custom-select-sm"
 							style="margin-left: 10px">
-								<option selected>운동 종목</option>
+								<option selected>종목선택</option>
 								<option value="전체보기">전체 보기</option>
 								<option value="육상">육상</option>
 								<option value="자전거">자전거</option>
 						</select> 
 						<select name="li_category" class="custom-select custom-select-sm"
 							style="margin-left: 10px">
-								<option selected>장비 종류</option>
-								<option value="신발">스포츠웨어</option>
-								<option value="안정장비">안정장비</option>
+								<option selected>장비선택</option>
+								<option value="스포츠웨어">스포츠웨어</option>
+								<option value="안전장비">안전장비</option>
 								<option value="신발">신발</option>
 								<option value="기타">기타</option>
 								<%-- <c:forEach items=”${사용할변수}” var=”넘어온데이터”>

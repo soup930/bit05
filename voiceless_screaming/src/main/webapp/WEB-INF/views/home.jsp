@@ -6,6 +6,8 @@
 <html>
 <title>Home</title>
 </head>
+<body>
+
 
 <%@ include file="includes/middle.jsp"%>
 <%@ include file="includes/footer.jsp"%>
