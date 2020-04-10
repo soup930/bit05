@@ -129,3 +129,4 @@ $RECYCLE.BIN/
 *.MF
 *.properties
 *.classpath
+.gitignore
