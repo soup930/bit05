@@ -2,10 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -22,37 +20,44 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 	crossorigin="anonymous"></script>
+	<!-- Custom styles for this template -->
+<link href="../../../resources/css/modern-business.css" rel="stylesheet">
 </head>
 <body>
-	<div class="row">
+<div class="container" style="width:1200px;"">
+<%@include file="../includes/topbar.jsp"%>
+	<div class="row col-12" >
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">admin 대회 목록</div>
-				<!-- /.panel-heading -->
 				<div class="panel-body">
+
+					<div class="col-sm-3">
+						<div class="input-group mb-4">
+							<select class="custom-select" name="test">
+								<option selected>분류</option>
+								<option value="사이클">사이클</option>
+								<option value="마라톤">마라톤</option>
+							</select>
+						</div>
+					</div>
+
 					<table class="table table-striped table-bordered table-hover">
 						<thead>
 							<tr>
-								<th>선택</th>
-								<th>번호</th>
 								<th>제목</th>
-								<th>일정</th>
-								<th>참가자 인원</th>
-								<th>조회수</th>
-								<th>접수 상황</th>
-								<th>참가자 리스트</th>
+								<th>일자</th>
+								<th>대회 장소</th>
+								<th>접수 기한</th>
+								<th>종목</th>
 							</tr>
 						</thead>
 						<c:forEach items="${data}" var="data">
 							<tr>
-								<td><label class="custom-control-label" for="jb-radio-1"></label></td>
-								<td>${data.co_b_index}</td>
-								<td>${data.co_b_title}</td>
-								<td>${data.co_b_text}</td>
-								<td>0</td>
-								<td>0</td>
-								<td><button type="button" class="btn btn-primary">접수중</button></td>
-								<td><button type="button" class="btn btn-primary">상세보기</button></td>
+								<td><a href="co_004_1?co_b_index=${data.co_b_index }">${data.co_b_title}</a></td>
+								<td>${data.co_b_day}</td>
+								<td>${data.co_b_area}</td>
+								<td>${data.co_b_period }</td>
+								<td>${data.co_b_type }</td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -63,17 +68,13 @@
 							<div class="modal-content"></div>
 
 						</div>
-					</div>
+					</div>				
 				</div>
-				<!-- /.table-responsive -->
-				<form role="form" action="ac_001_1" method="get">
-					<button type="submit" class="btn btn-primary float-right">글
-						작성</button>
-				</form>
 			</div>
 			<!-- /.panel-body -->
 		</div>
 		<!-- /.panel -->
 	</div>
+</div>
+	<%@include file="../includes/footer.jsp"%>
 </body>
-</html>
