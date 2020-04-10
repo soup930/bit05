@@ -1,26 +1,24 @@
-package vs.ac.ac_001_1.service;
+package vs.co.co_001_1.service;
 
 
 import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import vs.ac.ac_001_1.vo.AcVO;
 
-@Service
-public class Ac_ServiceImpl implements Ac_Service {
 
-	
+@Service
+public class Co_ServiceImpl implements Co_Service {
+
 	@Autowired
 	private SqlSession sqlSession;
-
+	
 	@Override
-	public List<AcVO> ac_List(AcVO acvo) {
+	public List<AcVO> co_List(AcVO acvo) {
 		List<AcVO> list;
-		
-		
+		 
 		try {
  
 			list = sqlSession.selectList("ac.ac_list", acvo);
@@ -34,10 +32,24 @@ public class Ac_ServiceImpl implements Ac_Service {
 
 	}
 	@Override
-	public void ac_insert(AcVO acvo) {
+	public List<AcVO> co_detail(String co_b_index) {
+ 
 		
-		sqlSession.insert("ac.ac_insert" , acvo);
+		try {
+			System.out.println("co_service" + co_b_index);
 		
+		List<AcVO> co_detail = sqlSession.selectList("co.co_detail", co_b_index);
+		
+		return co_detail;
+		
+		}catch(Exception e) {
+			System.out.println("co.co_detail¿¡·¯ : " + e);
+			
+			return null;
+		}
 	}
+	
+	
+	
 	
 }
