@@ -8,11 +8,13 @@
 	crossorigin="anonymous">
 	
 </script>
+
 <html>
 <title>Shop</title>
 
 </head>
 <body>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-xl-9 mx-auto">
@@ -34,22 +36,32 @@
 								</div>
 							</form>
 
-							<form class="form-signin" action="regist" name="regist">
+							<form class="form-signin" action="regist/">
 								<input type="text" id="prod_id" class="form-control"
-									placeholder="prod_id" required readOnly> <label>제품코드</label> <input
+									value="${prod_id}" name="sp_prod_id" required readOnly> 
+									<label>제품코드</label> 
+									<input
 									type="text" id="sale_name" class="form-control"
-									placeholder="sale_name" required> <label>상품이름</label> <input
+									placeholder="sale_name" name="sale_name" required> 
+									<label>상품이름</label> 
+									<input
 									type="text" id="sale_name_sub" class="form-control"
-									placeholder="sale_name_sub" required> <label>상품
-									서브 이름</label> <input type="text" id="sale_price" class="form-control"
-									placeholder="sale_price" required> <label>상품가격</label>
-								<input type="text" id="sale_quantity" class="form-control"
-									placeholder="sale_quantity" required> <label>수량</label>
-								<input type="text" id="sale_thumbmail" class="form-control"
-									placeholder="sale_thumbmail" required> <label>썸네일</label>
-								<input type="text" id="sale_detail" class="form-control"
-									placeholder="sale_detail" required> <label>상세페이지</label>
-								<button class="btn btn-lg btn-primary btn-block text-uppercase"
+									placeholder="sale_name_sub" name="sale_name_sub" required> 
+									<label>상품
+									서브 이름</label> 
+									<input type="text" id="sale_price" class="form-control"
+									placeholder="sale_price" name="sale_price" required> 
+									<label>상품가격</label>
+									<input type="text" id="sale_quantity" class="form-control"
+									placeholder="sale_quantity" name="sale_quantity" required> 
+									<label>수량</label>
+									<input type="text" id="sale_thumbmail" class="form-control"
+									placeholder="sale_thumbmail" name="sale_thumbmail" required> 
+									<label>썸네일</label>
+									<input type="text" id="sale_detail" class="form-control"
+									placeholder="sale_detail" name="sale_detail" required> 
+									<label>상세페이지</label>
+									<button class="btn btn-lg btn-primary btn-block text-uppercase"
 									type="submit">Register</button>
 							</form>
 						</div>

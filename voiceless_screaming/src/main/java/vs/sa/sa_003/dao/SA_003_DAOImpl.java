@@ -1,16 +1,14 @@
 package vs.sa.sa_003.dao;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import javax.xml.stream.events.Namespace;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
 
  
 @Service
@@ -23,24 +21,19 @@ public class SA_003_DAOImpl implements SA_003_DAO{
 
 	@Override
 	public List<Map> SaList() {
-		System.out.println("gogo DAOImpl");
 		
-		List<Map> list = sqlSession.selectList("");
-		
-		System.out.println(list + "dao : list");
-		
-		return list;
+		return null;
 	}
 
 	@Override
-	public List<Map<String, String>> SaInsert() {
-		System.out.println("gogo DAOImpl");
+	public Map SaleInsert(Map map) {
+		System.out.println("sale insert DAOImpl");
 		
-		List<Map<String, String>> list = sqlSession.selectList("shop.SaDAOImpl.getList2");
+		sqlSession.selectList("shop.SaDAOImpl.saleInsert", map);
 		
-		System.out.println(list + "dao : Insert");
+		System.out.println(map + "dao : Insert");
 		
-		return list;
+		return map;
 	}
 	
 	@Override
@@ -63,4 +56,5 @@ public class SA_003_DAOImpl implements SA_003_DAO{
 		
 		return data;
 	}
+	
 }

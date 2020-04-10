@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,7 +37,7 @@ public class SA_002_ControllerImpl implements SA_002_Controller {
 	}
 	
 	@Override
-	@RequestMapping(value="/sa/SearchProducts/")
+	@RequestMapping(value="/sa/SearchProducts/", method=RequestMethod.POST)
 	public ModelAndView P_SA_002_4 (@RequestParam(defaultValue="")String str, 
 			HttpServletRequest request, HttpServletResponse response 
 			) throws Exception {
@@ -52,16 +53,15 @@ public class SA_002_ControllerImpl implements SA_002_Controller {
 	}
 	
 	@Override
-	@RequestMapping(value="/sa/SearchProducts/{prod_id}")
-	public  ModelAndView P_SA_002_4_response (@PathVariable("prod_id")String str, 
+	@RequestMapping(value="/sa/SearchProducts/select")
+	public  ModelAndView P_SA_002_4_response (@RequestParam(defaultValue="")String str, 
 			HttpServletRequest request, HttpServletResponse response 
 			) throws Exception {
 		System.out.println("P_SA_002_4_response");
-		System.out.println(str);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("sa/sa_003_1");
 		request.setAttribute("prod_id", str);
-		System.out.println("mav완료");
+		System.out.println(str + "mav완료");
 		
 		return mav;
 	}
