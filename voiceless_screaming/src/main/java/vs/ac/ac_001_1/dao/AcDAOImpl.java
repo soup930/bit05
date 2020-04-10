@@ -8,9 +8,11 @@ import javax.xml.stream.events.Namespace;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
- 
+import org.springframework.stereotype.Service;
+
 import vs.ac.ac_001_1.domain.AcVO;
  
+@Service
 @Repository
 public class AcDAOImpl implements AcDAO{
 
@@ -21,7 +23,7 @@ public class AcDAOImpl implements AcDAO{
 	@Override
 	public List<AcVO> Ac_List() {
 		
-		System.out.println("¿©±â´Â DAOImpl");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ DAOImpl");
 		
 		List<AcVO> list = sqlSession.selectList("ac.ac_list");
 		
