@@ -14,69 +14,154 @@
 .distanceInfo {position:relative;top:5px;left:5px;list-style:none;margin:0;}
 .distanceInfo .label {display:inline-block;width:50px;}
 .distanceInfo:after {content:none;}
-#course{height:500px;margin:10px auto;align:center;}
-#map {float:left;}
-#mapText {float:left;}
+.course-text {margin-bottom:30px;}
+.input-group-prepend {width:80px;}
 </style>
+<!-- 	-------------------------------------------------------------------------------------->	
+
+	<!-- ck에디터 -->
+	<script type="text/javascript"
+	src="../../../resources/CKEditorSample/ckeditor/ckeditor.js"></script>
 	
 <!-- 	-------------------------------------------------------------------------------------->	
 <!-- 지도 부분 -->
- 	<div id="wrapper1" class="container">
-
- 	...
-	<h5 class="pb-4 mb-4 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 코스 등록
-      </font></font></h5>
-	<br>
+ 	<div class="container">
+ 	
+ 	<form name="upload" action="lc/uploadCourse" method="get">
 	
-	<div id="course">
-	
-		<div id="map" style="width:600px;height:500px;"></div>
-	
-	
-	<div class="col-md-4" id="mapText">
-		<div class="p-4">
-		<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 거리 : <span id="distance"></span>
-     	 </font></font></h3>
-     	 </div>
-   		<br>
-      
-      <div class="p-4">
-      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 도보 시간 : <span id="walkTime"></span>
-      </font></font></h3>
-      </div>
-      <br>
-      
-      <div class="p-4">
-      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	자전거 시간 : <span id="bycicleTime"></span>
-      </font></font></h3>
-      </div>
-      <br>
-      
-      <div class="p-4">
-      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-       	 출발지 : <span id="start"></span>
-      </font></font></h3>
-      </div>
-      <br>
-    </div>
-    </div>
-		
-			
-	<div class="row">
-	<span>상세 정보</span>
+		<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top:50px"><font style="vertical-align: inherit; font-weight:bold;"><font style="vertical-align: inherit;">
+	       	 코스 등록
+	      </font></font></h3>
 		<br>
 		
-	제목 : <input type="text"/> <br>
-		지역 : <input type="SelectBox"/> <input type="SelectBox"/><br>
-		썸네일 : <br>
-		내용 : <br>
+		<div class="row justify-content-center">
 		
-	</div>
-	
+			<div id="map" class="col-8" style="width:500px;height:500px;"></div>
+		
+		
+		<div class="col-4" id="mapText">
+			<div class="p-4">
+			<h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	 거리 : <span id="distance" name="distance"></span>
+	       	 <input type="hidden" id="lc_distance" name="lc_distance"/>
+	     	 </font></font></h3>
+	     	 </div>
+	   		<br>
+	      
+	      <div class="p-4">
+	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	 도보 시간 : <span id="run" name="run"></span>
+	       	 <input type="hidden" id="lc_run" name="lc_run"/>
+	      </font></font></h3>
+	      </div>
+	      <br>
+	      
+	      <div class="p-4">
+	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	자전거 시간 : <span id="cycle" name="cycle"></span>
+	       	<input type="hidden" id="lc_cycle" name="lc_cycle"/>
+	      </font></font></h3>
+	      </div>
+	      <br>
+	      
+	      <div class="p-4">
+	      <h3 class="pb-2 mb-2 font-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+	       	 출발지 : <span id="address" name="address"></span>
+	       	 <input type="hidden" id="lc_address" name="lc_address"/>
+	      </font></font></h3>
+	      </div>
+	      <br>
+	    </div>
+	    </div>
+	    
+	    <h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top:50px"><font style="vertical-align: inherit; font-weight:bold;"><font style="vertical-align: inherit;">
+	       	 상세 정보
+	      </font></font></h3>
+		<br>
+		
+		<div class="row justify-content-left">
+		
+		<ul class="list-unstyled" style="margin-left:30px;">
+			<li class="course-text">
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">제목</font></h5>    
+						</div>
+						<input type="text" class="form-control" id="lc_title" name="lc_title" placeholder="제목을 입력해주세요.">
+					</div>
+			</li>
+			
+			<li class="course-text">
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">게시판</font></h5>    
+						</div>
+						<select class="custom-select d-block w-15" id="lc_type" name="lc_type">
+						 <option value>육상</option>
+						 <option>자전거</option>
+						</select>
+					</div>
+			</li>
+			
+			<li class="course-text">
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">지역</font></h5>    
+						</div>
+						
+						<div class="col-md-2" style="margin-left:-15px;">
+						<text class="form-control" id="area1" name="area1"></text>
+						<input type="hidden" id="lc_area1" name="lc_area1"/>
+						</div>
+						
+						<div class="col-md-2">
+						<text class="form-control" id="area2" name="area2"></text>
+						<input type="hidden" id="lc_area2" name="lc_area2"/>
+						</div>
+						
+						<div class="col-md-2">
+						<text class="form-control" id="area3" name="area3"></text>
+						<input type="hidden" id="lc_area3" name="lc_area3"/>
+						</div>
+					</div>
+			</li>
+		
+			
+			<li class="course-text">
+
+					<div class="input-group mb-1">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">썸네일</font></h5>    
+						</div>
+						<div class="custom-file">
+                 		 &nbsp;<input type="file" class="form-control-file" id="exampleFormControlFile1" name="lc_tumbnail">
+             			</div>
+					</div>
+			</li>
+				
+			<li class="course-text">
+					
+					<div class="col_c" style="margin-bottom: 30px">
+						<div class="input-group">
+						<div class="input-group-prepend">
+							<h5 class="my-0 font-weight-normal"><font style="font-weight:bold">내용</font></h5>    
+						</div>
+							<textarea class="textarea" name="lc_text" id="lc_text"></textarea>
+							<script type="text/javascript">
+								CKEDITOR.replace('lc_text');
+							</script>
+						</div>
+					</div>
+			</li>
+				
+			</ul>
+		</div>
+		
+		<input type="submit" value="업로드" />
+		
+		<input type="text" id="lc_xy_arr" name="lc_xy_arr"/>
+		</form>
+		
 	</div>
 	
 	
@@ -143,9 +228,9 @@
 		    	
 		    	//HTML에 표시되는 데이터 초기화
 		    	document.getElementById('distance').innerHTML= '';
-			    document.getElementById('walkTime').innerHTML = '';
-			    document.getElementById('bycicleTime').innerHTML = '';
-			    document.getElementById('start').innerHTML= '';
+			    document.getElementById('run').innerHTML = '';
+			    document.getElementById('cycle').innerHTML = '';
+			    document.getElementById('address').innerHTML= '';
 		    	
 		    	// 주소-좌표 변환 객체를 생성합니다
 				var geocoder = new kakao.maps.services.Geocoder();
@@ -153,19 +238,31 @@
 
 				  searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
 				        if (status === kakao.maps.services.Status.OK) {
-				            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-				            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+				            /* var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : ''; */
+				           var detailAddr = result[0].address.address_name;
 				            
-				            content = '<div class="bAddr">' +
-				                            '<span class="title">법정동 주소정보</span>' + 
+				            content = '<p class="bAddr">' +
 				                            detailAddr + 
-				                        '</div>';
+				                        '</p>';
 		
 				            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
 				            infowindow.setContent(content);
-				      
+				      		
+				            var contentArr = detailAddr.split(' ');
 				            
-				            document.getElementById('start').innerHTML=content;
+				            console.log(contentArr[0]);
+				            console.log(contentArr[1]);
+				            console.log(contentArr[2]);
+				            
+				            document.getElementById('address').innerHTML=content;
+				            document.getElementById('area1').innerHTML=contentArr[0];
+				            document.getElementById('area2').innerHTML=contentArr[1];
+				            document.getElementById('area3').innerHTML=contentArr[2];
+				            
+				            document.getElementById('lc_address').value=detailAddr;
+				            document.getElementById('lc_area1').value=contentArr[0];
+				            document.getElementById('lc_area2').value=contentArr[1];
+				            document.getElementById('lc_area3').value=contentArr[2];
 				            
 
 				        }   
@@ -228,6 +325,10 @@
 
 		        var distance = Math.round(clickLine.getLength());
 		        displayCircleDot(clickPosition, distance);
+		        
+		        console.log(path);
+		        
+		        document.getElementById('lc_xy_arr').value = path;
 		    }
 		});
 		    
@@ -429,8 +530,12 @@
 		    content += '</ul>'
 
 			    document.getElementById('distance').innerHTML= distance/1000 + 'km';
-		    	document.getElementById('walkTime').innerHTML = walkHour + walkMin;
-		    	document.getElementById('bycicleTime').innerHTML = bycicleHour + bycicleMin;
+		    	document.getElementById('run').innerHTML = walkHour + walkMin;
+		    	document.getElementById('cycle').innerHTML = bycicleHour + bycicleMin;
+		    	
+		    	document.getElementById('lc_distance').value= distance/1000;
+		    	document.getElementById('lc_run').value = Math.floor(walkkTime / 60) + "시간 " + walkkTime % 60 +"분";
+		    	document.getElementById('lc_cycle').value = Math.floor(bycicleTime / 60) + "시간 " + bycicleTime % 60 + "분";
 
 		    return content;
 		    
