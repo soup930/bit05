@@ -23,6 +23,8 @@ public class LC_001_1_ServiceImpl implements LC_001_1_Service{
 	public void courseInsert(LC_001_1_VO vo, LC_001_1_MapVO vo2) {
 		// TODO Auto-generated method stub
 		
+		vo.setM_index("guest");
+		
 		
 		dao.insert(vo, vo2);
 	}
